@@ -4,13 +4,13 @@ import { storage } from '../storage.js';
 export const stageTwo = {
   exec({ from, message }) {
     const order =
-      '\n*️⃣ - ```FINALIZAR ATENDIMENTO```\n0️⃣ - ```VOLTAR INICIO```';
+      '\n*️⃣ - ```FINALIZAR ATENDIMENTO```\n5️⃣ - ```VOLTAR INICIO```';
     if (message === '*') {
       storage[from].stage = 5;
       storage[from].itens = [];
 
       return '🔴 Atendimento *FINALIZADO* com sucesso. \n\n ```Volte Sempre!```';
-    } else if (message === 0) {
+    } else if (message == '5') {
       storage[from].stage = 1;
       return '\nQual das opções abaixo será mais adequada? 🙋‍♂️\n-----------------------------------\n' +
         '1️⃣ - ```SUPORTE```\n' +

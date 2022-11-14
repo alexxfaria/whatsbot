@@ -24,28 +24,27 @@ export const stageOne = {
 
       msg +=
         '\n*Acesse nosso manual* : http://docs.kmsistemas.com.br/mentorsoft-manual/modulos/faturamento/\n\n⚠️ ```APENAS UMA OPÇÃO POR VEZ``` ⚠️';
-      storage[from].stage = 2;
-
+        storage[from].stage = 2
       return msg;
     } else if (message === '2') {
       let msg = '';
-      let fone = 'https://wa.me/5543999733952' // Financeiro
       msg +=
-        `\n*Segue o contato*:${fone}` + '\n *️⃣ - ```FINALIZAR ATENDIMENTO```\n 0️⃣ - ```VOLTAR PARA O MENU```';
+        '*️⃣ - ```FINALIZAR ATENDIMENTO```\n5️⃣ - ```VOLTAR INICIO```';
+      client.sendContactVcard(from, '554399733952@c.us', 'Aleison - Financeiro') // Financeiro
       storage[from].stage = 2;
       return msg;
     } else if (message === '3') {
       let msg = '';
-      let fone = 'https://wa.me/5543999733952' // Comercial
       msg +=
-        `\n*Segue o contato*:${fone}` + '\n *️⃣ - ```FINALIZAR ATENDIMENTO```\n 0️⃣ - ```VOLTAR PARA O MENU```';
+        '*️⃣ - ```FINALIZAR ATENDIMENTO```\n5️⃣ - ```VOLTAR INICIO```';
+      client.sendContactVcard(from, '554399733952@c.us', 'Aleison - Comercial')
       storage[from].stage = 2;
       return msg;
     } else if (message === '4') {
       let msg = '';
-      let fone = 'https://wa.me/5543998251740' // Implantação
       msg +=
-        `\n*Segue o contato*:${fone}` + '\n *️⃣ - ```FINALIZAR ATENDIMENTO```\n 0️⃣ - ```VOLTAR PARA O MENU```';
+        '*️⃣ - ```FINALIZAR ATENDIMENTO```\n5️⃣ - ```VOLTAR INICIO```'
+      client.sendContactVcardList(from, ['554398251740@c.us', '554396170301@c.us'])
       storage[from].stage = 2;
       return msg;
     } else if (message === '0') {
